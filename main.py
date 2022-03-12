@@ -40,10 +40,13 @@ coded_message = "vhfinmxkl atox kxgwxkxw tee hy maxlx hew vbiaxkl tl hulhexmx. p
 def vigenere_decoder(coded_message, keyword):
     letter_pointer = 0
     keyword_final = ""
+    # this combs over the given code
     for i in range(0,len(coded_message)):
+        # this goes over punctuation
         if coded_message[i] in punctuation:
             keyword_final += coded_message[i]
         else:
+            # This adds the letters to the empty sting
             keyword_final += keyword[letter_pointer]
             letter_pointer = (letter_pointer+1)%len(keyword)
     translated_message = ""
